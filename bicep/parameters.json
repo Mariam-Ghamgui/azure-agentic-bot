@@ -1,0 +1,44 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "prefix": {
+      "value": "m2c"
+    },
+    "suffix": {
+      "value": "bot"
+    },
+    "userObjectId": {
+      "value": "16878bb8-0db3-4171-acc4-f823d3401abf"
+    },
+    "keyVaultEnablePurgeProtection": {
+      "value": false
+    },
+    "acrEnabled": {
+      "value": false
+    },
+    "nspEnabled": {
+      "value": false
+    },
+    "openAiDeployments": {
+      "value": [
+        {
+          "model": {
+            "name": "gpt-4",
+            "version": "turbo-2024-04-09"
+          },
+          "sku": {
+            "name": "GlobalStandard",
+            "capacity": 8
+          }
+        }
+      ]
+    },
+    "tags": {
+      "value": {
+        "environment": "development",
+        "iac": "bicep"
+      }
+    }
+  }
+}

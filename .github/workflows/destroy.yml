@@ -1,0 +1,51 @@
+name: Destroy Azure Resources
+
+on:
+  workflow_dispatch:
+    inputs:
+      action:
+        type: choice
+        description: 'Action to perform'
+        required: true
+        options:
+          - delete
+
+env:
+  RESOURCE_GROUP_NAME: 'intership2025'
+  LOCATION: 'westeurope'
+
+jobs:
+  destroy-resources:
+    name: Destroy Azure Resources
+    runs-on: self-hosted
+    steps:
+      - name: Disable submodule recursion
+        run: git config --global submodule.recurse false
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Manual Azure Login
+        run: |
+          az cloud set -n azurecloud
+          az login --service-principal \
+            -u "${{ secrets.CLIENT_ID }}" \
+            -p "${{ secrets.CLIENT_SECRET }}" \
+            --tenant "${{ secrets.TENANT_ID }}"
+          az account set --subscription "${{ secrets.SUBSCRIPTION_ID }}"
+        shell: bash
+
+      - name: Verify Azure login
+        run: |
+          az account show
+          echo "Resource Group: $RESOURCE_GROUP_NAME"
+
+      - name: Delete Resource Group
+        run: |
+          echo "Deleting resource group $RESOURCE_GROUP_NAME..."
+          az group delete \
+            --name $RESOURCE_GROUP_NAME \
+            --yes \
+            --no-wait
+          
+          echo "Resource group deletion initiated. It may take several minutes to complete."

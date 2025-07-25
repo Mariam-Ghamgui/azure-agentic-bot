@@ -47,7 +47,7 @@ These modules ensure **secure, repeatable deployments** of all Azure services us
 
 📎 *See*: `deploy.yml` and `destroy.yml` in [`.github/workflows`](./.github/workflows)  
 
-![Azure Resources](images/azure-resources.png)
+![App Architecture](images/app-architecture.png)
 
 ---
 
@@ -63,8 +63,7 @@ The flow is deployed to an Azure VM and exposed via a secure endpoint — consum
 - Confirms and executes operations securely
 - Uses OpenAI GPT-4o for generation
 - Built using modular prompt nodes and Python nodes
-
-![App Architecture](images/app-architecture.png)
+ 
 ![Prompt Flow](images/promptflow-nodes.png)
 
 ---

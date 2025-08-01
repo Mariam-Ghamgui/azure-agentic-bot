@@ -123,3 +123,6 @@ I'm actively seeking full-time opportunities in:
 
 ---
 
+📌 Note: The actual source code is not public due to company confidentiality.
+
+

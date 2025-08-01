@@ -2,6 +2,8 @@
 
 This repository contains the full implementation of my end-of-studies project as a **DevOps Engineer intern at Move2Cloud**. It showcases an **agentic AI bot built on Azure**, capable of performing real-time actions (create, update, delete, list) on a user's Azure environment — combining the power of **Prompt Engineering**, **Azure AI Foundry**, and **infrastructure-as-code (IaC)** using **Bicep**.
 
+📌 **Note:** The actual source code is not public due to company confidentiality.
+
 ---
 
 ## 📌 Project Overview
@@ -122,7 +124,4 @@ I'm actively seeking full-time opportunities in:
 📫 [LinkedIn](https://www.linkedin.com/in/mariam-ghamgui) | 🌐 [Portfolio](https://mariam-ghamgui.github.io)
 
 ---
-
-📌 Note: The actual source code is not public due to company confidentiality.
-
 
